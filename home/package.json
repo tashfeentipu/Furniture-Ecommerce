@@ -1,5 +1,5 @@
 {
-  "name": "container",
+  "name": "home",
   "version": "1.0.0",
   "description": "Container for hosting all the microfront-ends",
   "main": "index.js",

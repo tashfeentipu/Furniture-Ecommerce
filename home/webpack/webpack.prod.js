@@ -6,9 +6,10 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
-      remotes: {
-        // marketing: `marketing@${domain}/marketing/remoteEntry.js`,
+      name: 'homeMS',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './HomeMS': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),

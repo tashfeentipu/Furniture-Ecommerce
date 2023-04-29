@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   devServer: {
-    port: 8080,
+    port: 8081,
     historyApiFallback: {
       index: 'index.html',
     },
@@ -19,9 +19,10 @@ module.exports = {
   plugins: [
     new ReactRefreshWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: 'container',
-      remotes: {
-        homeMS: 'homeMS@http://localhost:8081/remoteEntry.js',
+      name: 'homeMS',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './homeMS': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),
