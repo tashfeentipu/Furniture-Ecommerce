@@ -1,0 +1,20 @@
+{
+  "name": "root-configs",
+  "version": "1.0.0",
+  "description": "Script for starting overall microservices at once",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tashfeentipu/Furniture-Ecommerce.git"
+  },
+  "author": "M.Tashfeen Tipu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tashfeentipu/Furniture-Ecommerce/issues"
+  },
+  "homepage": "https://github.com/tashfeentipu/Furniture-Ecommerce#readme"
+}

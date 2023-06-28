@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
 
@@ -17,7 +16,6 @@ module.exports = {
     }
   },
   plugins: [
-    new ReactRefreshWebpackPlugin(),
     new ModuleFederationPlugin({
       name: 'homeMS',
       filename: 'remoteEntry.js',
