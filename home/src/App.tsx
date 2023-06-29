@@ -1,3 +1,3 @@
 export const Home = () => {
-    return <h1>Tipu Is Testing if the services are running</h1>
+    return <h1>This is home service</h1>
 }

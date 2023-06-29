@@ -30,8 +30,7 @@ module.exports = {
                 type: 'asset/inline',
             },
         ]
-    },
-    
+    },   
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '..', './src/index.html'),

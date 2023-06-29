@@ -5,10 +5,10 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new ModuleFederationPlugin({
-      name: 'homeMS',
+      name: 'auth',
       filename: 'remoteEntry.js',
       exposes: {
-        './HomeMS': './src/bootstrap',
+        './auth': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),
