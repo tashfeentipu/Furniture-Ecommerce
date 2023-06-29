@@ -1,8 +1,16 @@
 const { exec } = require('child_process');
+const { readdirSync } = require('fs')
 
+const excludedDirectories = [".git", "auth", "cart", "checkout", "services", "shop"]
 
-exec('npm start', { cwd: './home' });
-exec('npm start', { cwd: './container' });
+const getDirectories = readdirSync(__dirname, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory() && !excludedDirectories.includes(dirent.name))
+    .map(dirent => dirent.name)
 
-
-console.log("Services are Up and Running");
+for (dir of getDirectories) {
+    exec('npm start', { cwd: `./${dir}` }, (err, stdout, stderr) => {
+        if (err) {
+            throw err
+        }
+    });
+}
