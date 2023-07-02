@@ -22,10 +22,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'homeMS',
+      name: 'home',
       filename: 'remoteEntry.js',
       exposes: {
-        './homeMS': './src/bootstrap',
+        './home': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),

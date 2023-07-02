@@ -1,3 +1,3 @@
 export const Auth = () => {
-    return <h1>This is Auth Service</h1>
+    return <h1>This is Auth service</h1>
 }

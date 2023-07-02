@@ -1,6 +1,6 @@
+const path = require('path')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
-const path = require('path')
 
 module.exports = {
   mode: 'development',
@@ -8,10 +8,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
-    publicPath: 'http://localhost:8080/',
+    publicPath: 'http://localhost:8083/',
   },
   devServer: {
-    port: 8080,
+    port: 8083,
     historyApiFallback: {
       index: 'index.html',
     },
@@ -22,11 +22,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
-      remotes: {
-        home: 'home@http://localhost:8081/remoteEntry.js',
-        auth: 'auth@http://localhost:8082/remoteEntry.js',
-        components: 'components@http://localhost:8083/remoteEntry.js',
+      name: 'components',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './components': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),

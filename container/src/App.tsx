@@ -1,9 +1,11 @@
-import Home from 'homeMS/homeMS';
-import Auth from 'authMS/auth';
+import Home from 'home/home';
+import Auth from 'auth/auth';
+import Components from 'components/components';
 
 export const App = () => {
     return <>
         <Auth />
         <Home />
+        <Components />
     </>
 }
