@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: '[name].[contenthash].js',
+    publicPath: '/home/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
