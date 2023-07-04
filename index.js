@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 const { readdirSync } = require('fs')
 
-const excludedDirectories = [".git", "cart", "checkout", "services", "shop"]
+const excludedDirectories = [".git", ".github", "cart", "checkout", "services", "shop"]
 
 const getDirectories = readdirSync(__dirname, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory() && !excludedDirectories.includes(dirent.name))
