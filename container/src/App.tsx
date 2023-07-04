@@ -4,6 +4,7 @@ import Components from 'components/components';
 
 export const App = () => {
     return <>
+        <div>Hi There!!!</div>
         <Auth />
         <Home />
         <Components />
