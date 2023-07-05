@@ -4,7 +4,5 @@ import Components from 'components/components';
 import Router from "./routing/router";
 
 export const App = () => {
-    return <>
-        <Router />
-    </>
+    return <Router />
 }

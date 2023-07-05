@@ -1,6 +1,8 @@
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { Auth } from "./App";
 
-ReactDOM.render(<Auth />, document.getElementById("root"))
+ReactDOM.createRoot(document.getElementById("root")!).render(
+    <Auth />
+);
 
 export default Auth;

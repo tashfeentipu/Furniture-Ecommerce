@@ -1,6 +1,8 @@
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { Home } from "./App";
 
-ReactDOM.render(<Home />, document.getElementById("root"))
+ReactDOM.createRoot(document.getElementById("root")!).render(
+    <Home />
+);
 
 export default Home;

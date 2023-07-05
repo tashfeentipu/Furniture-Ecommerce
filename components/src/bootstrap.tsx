@@ -1,6 +1,8 @@
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { Components } from "./App";
 
-ReactDOM.render(<Components />, document.getElementById("root"))
+ReactDOM.createRoot(document.getElementById("root")!).render(
+    <Components />
+);
 
 export default Components;
