@@ -1,8 +1,17 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { Auth } from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <Auth />
-);
+const mount = ({
+    mountPoint,
+    initialPathname,
+}: {
+    mountPoint: HTMLElement;
+    initialPathname?: string;
+}) => {
+    const root = createRoot(mountPoint);
+    root.render(<Auth />);
 
-export default Auth;
+    return () => queueMicrotask(() => root.unmount());
+};
+
+export { mount };

@@ -1,8 +1,10 @@
-import Home from 'home/home';
-import Auth from 'auth/auth';
-import Components from 'components/components';
+import {Home, Auth, Components }from './remoteMS';
 import Router from "./routing/router";
 
 export const App = () => {
-    return <Router />
+    return <>
+        <Auth />
+        <Components />
+        <Home />
+    </>
 }

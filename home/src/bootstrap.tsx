@@ -1,8 +1,17 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { Home } from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <Home />
-);
+const mount = ({
+    mountPoint,
+    initialPathname,
+}: {
+    mountPoint: HTMLElement;
+    initialPathname?: string;
+}) => {
+    const root = createRoot(mountPoint);
+    root.render(<Home />);
 
-export default Home;
+    return () => queueMicrotask(() => root.unmount());
+};
+
+export { mount };

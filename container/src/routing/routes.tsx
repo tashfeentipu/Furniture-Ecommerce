@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
-import Layout from "../container/layout";
+import Layout from "../containers/layout";
 import { Auth, Home } from "./constants";
 
 const AuthMS = lazy(() => import("auth/auth"));
@@ -17,11 +17,11 @@ export const routes: RouteObject[] = [
       },
       {
         path: `/${Auth}/*`,
-        element: <Suspense> <AuthMS /></Suspense>,
+        element: <Suspense> Auth</Suspense>,
       },
       {
         path: `/${Home}/*`,
-        element: <Suspense> <HomeMS /></Suspense>,
+        element: <Suspense> Home</Suspense>,
       },
     ],
   }
