@@ -1,27 +1,27 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
-// import { Layout } from "../components/Layout";
+import Layout from "../container/layout";
 import { Auth, Home } from "./constants";
 
-// const App1Lazy = lazy(() => import("../components/App1"));
-// const App2Lazy = lazy(() => import("../components/App2"));
+const AuthMS = lazy(() => import("auth/auth"));
+const HomeMS = lazy(() => import("home/home"));
 
 export const routes: RouteObject[] = [
   {
     path: '/',
-    // element: <Layout />,
+    element: <Layout />,
     children: [
       {
         index: true,
-        element: <Navigate to={`/${Auth}`} />,
+        element: <Navigate to={'/'} />,
       },
       {
         path: `/${Auth}/*`,
-        element: <Suspense fallback="Loading App1..."></Suspense>,
+        element: <Suspense> <AuthMS /></Suspense>,
       },
       {
         path: `/${Home}/*`,
-        element: <Suspense fallback="Loading App2..."></Suspense>,
+        element: <Suspense> <HomeMS /></Suspense>,
       },
     ],
   }

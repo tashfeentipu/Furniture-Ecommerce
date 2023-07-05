@@ -1,4 +1,3 @@
-import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -7,8 +6,8 @@ import { routes } from "./routes";
 
 const browserRouter = createBrowserRouter(routes);
 
-export function Router() {
+export default function Router() {
   return (
-    <RouterProvider router={browserRouter} />
+    <RouterProvider router={browserRouter} fallbackElement={<div>Loading...</div>} />
   );
 }
