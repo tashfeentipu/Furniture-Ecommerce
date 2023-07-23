@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "npm-run-all -p \"start -w auth\" \"start -w components\" \"start -w home\" \"start -w container\""
   },
   "repository": {
     "type": "git",
@@ -13,8 +13,17 @@
   },
   "author": "M.Tashfeen Tipu",
   "license": "ISC",
+  "workspaces": [
+    "auth",
+    "components",
+    "home",
+    "container"
+  ],
   "bugs": {
     "url": "https://github.com/tashfeentipu/Furniture-Ecommerce/issues"
   },
-  "homepage": "https://github.com/tashfeentipu/Furniture-Ecommerce#readme"
+  "homepage": "https://github.com/tashfeentipu/Furniture-Ecommerce#readme",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }

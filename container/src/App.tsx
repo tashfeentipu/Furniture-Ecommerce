@@ -1,10 +1,11 @@
-import {Home, Auth, Components }from './remoteMS';
+import { Home, Auth, Components } from './remoteMS';
 import Router from "./routing/router";
 
 export const App = () => {
     return <>
-        <Auth />
+        {/* <Auth />
         <Components />
-        <Home />
+        <Home /> */}
+        <Router />
     </>
 }

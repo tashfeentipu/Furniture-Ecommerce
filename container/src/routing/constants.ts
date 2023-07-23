@@ -1,2 +1,2 @@
-export const Auth = "auth"
-export const Home = "home"
+export const CAuth = "auth"
+export const CHome = "home"

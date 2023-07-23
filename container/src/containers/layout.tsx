@@ -10,7 +10,7 @@ const Layout = (props: IProps) => {
     return (<>
         <Header />
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
     </>);
 };
 

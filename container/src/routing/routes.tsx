@@ -1,10 +1,11 @@
 import { lazy, Suspense } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
 import Layout from "../containers/layout";
-import { Auth, Home } from "./constants";
+import { CAuth, CHome } from "./constants";
+import { Auth, Home } from "../remoteMS";
 
-const AuthMS = lazy(() => import("auth/auth"));
-const HomeMS = lazy(() => import("home/home"));
+// const AuthMS = lazy(() => import("auth/auth"));
+// const HomeMS = lazy(() => import("home/home"));
 
 export const routes: RouteObject[] = [
   {
@@ -16,12 +17,12 @@ export const routes: RouteObject[] = [
         element: <Navigate to={'/'} />,
       },
       {
-        path: `/${Auth}/*`,
-        element: <Suspense> Auth</Suspense>,
+        path: `/${CAuth}/*`,
+        element: <Suspense><Auth /></Suspense>,
       },
       {
-        path: `/${Home}/*`,
-        element: <Suspense> Home</Suspense>,
+        path: `/${CHome}/*`,
+        element: <Suspense> <Home /></Suspense>,
       },
     ],
   }
