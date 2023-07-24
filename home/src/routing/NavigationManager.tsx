@@ -1,8 +1,6 @@
 import { ReactElement, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { matchRoutes, useLocation, useNavigate } from "react-router-dom";
 import { routes } from "../routing/routes";
-import { LOGIN, SIGN_UP } from "./types";
 
 interface NavigationManagerProps {
     children: ReactElement;
@@ -18,8 +16,9 @@ export function NavigationManager({ children }: NavigationManagerProps) {
             if (location.pathname === pathname || !matchRoutes(routes, { pathname })) {
                 return;
             }
-            console.log("Container Navigated auth");
+            console.log("Container Navigated home");
             navigate(pathname);
+            
         }
 
         window.addEventListener("container navigated", shellNavigationHandler);
@@ -31,18 +30,12 @@ export function NavigationManager({ children }: NavigationManagerProps) {
 
     useEffect(() => {
         window.dispatchEvent(
-            new CustomEvent("auth navigated", { detail: location.pathname })
+            new CustomEvent("home navigated", { detail: location.pathname })
         );
     }, [location]);
 
 
     return <div>
-        <Link to={`/${LOGIN}`} style={{ marginRight: "1rem" }}>
-            Login
-        </Link>
-        <Link to={`/${SIGN_UP}`} >
-            Sign Up
-        </Link>
         {children}
     </div>;
 }

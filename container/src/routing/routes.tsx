@@ -14,11 +14,11 @@ export const routes: RouteObject[] = [
         element: <Navigate to={'/'} />,
       },
       {
-        path: `/${CAuth}/*`,
+        path: `${CAuth}/*`,
         element: <Suspense><Auth /></Suspense>,
       },
       {
-        path: `/${CHome}/*`,
+        path: `${CHome}/*`,
         element: <Suspense> <Home /></Suspense>,
       },
     ],
