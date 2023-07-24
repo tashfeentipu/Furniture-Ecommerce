@@ -15,11 +15,11 @@ export const routes: RouteObject[] = [
         element: <Login />,
       },
       {
-        path: `/${LOGIN}`,
+        path: `${LOGIN}`,
         element: <Login />,
       },
       {
-        path: `/${SIGN_UP}`,
+        path: `${SIGN_UP}`,
         element: <SignUp />,
       },
     ],
