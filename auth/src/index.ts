@@ -4,6 +4,7 @@ import('./bootstrap').then(
 
         mount({
             mountPoint: localRoot!,
+            routingStrategy: 'browser',
         });
     }
 );
