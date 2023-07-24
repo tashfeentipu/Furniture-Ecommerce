@@ -16,7 +16,6 @@ export function NavigationManager({ children }: NavigationManagerProps) {
             if (location.pathname === pathname || !matchRoutes(routes, { pathname })) {
                 return;
             }
-            console.log("Container Navigated home");
             navigate(pathname);
             
         }
